@@ -52,7 +52,7 @@ This repository contains the semester project for the **BPC-NDI** course at Brno
 *(Insert your overall system block diagram here. E.g., the Visio diagram showing the FPGA, SPI Master, and internal modules.)*
 
 <div align="center">
-  <img src="docs/images/top_design.png" alt="Top Level Schematic" width="600">
+  <img src="docs/images/top_design.svg" alt="Top Level Schematic" width="600">
 </div>
 
 ## RTL Design
