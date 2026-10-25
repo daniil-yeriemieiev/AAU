@@ -50,10 +50,10 @@ This repository contains the semester project for the **BPC-NDI** course at Brno
 
 ## Schematic
 
-![General Schematic](docs/images/top_design.svg)
+![General Schematic](docs/images/top_design.png)
 Top-level schematic of the complete board-level functionality. It shows the full system composition, the main interconnected blocks, and how the individual modules interact with each other and with the surrounding hardware on the FPGA platform.
 
-![Working Schematic](docs/images/aau_design.svg)
+![Working Schematic](docs/images/aau_design.png)
 Detailed implementation-oriented block diagram used during the design process. It specifies the ports, signal names, and interconnections of the developed subsystem and represents the actual working view of the project as a black-box interface description, without exposing the internal functional details of the individual blocks.
 
 ## RTL Design
