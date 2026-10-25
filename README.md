@@ -48,12 +48,13 @@ This repository contains the semester project for the **BPC-NDI** course at Brno
 | - [ ] | **REQ_AAU_I_023** | Link reset | When reception of the second frame of a packet is not started in 1ms after the first frame was received, such packet shall be considered invalid. | | X | | | Requires a timer. Max counter value depends on the system `clk` frequency to reach 1ms |
 | - [ ] | **REQ_AAU_I_024** | Packet format | Arithmetic results shall be sent out to master in the following order: 1. Sum 2. Product | | X | | | |
 
-## Schematic (Top Design)
-*(Insert your overall system block diagram here. E.g., the Visio diagram showing the FPGA, SPI Master, and internal modules.)*
+## Schematic
 
-<div align="center">
-  <img src="docs/images/top_design.svg" alt="Top Level Schematic" width="600">
-</div>
+![General Schematic](docs/images/top_design.svg)
+Top-level schematic of the complete board-level functionality. It shows the full system composition, the main interconnected blocks, and how the individual modules interact with each other and with the surrounding hardware on the FPGA platform.
+
+![Working Schematic](docs/images/aau_design.svg)
+Detailed implementation-oriented block diagram used during the design process. It specifies the ports, signal names, and interconnections of the developed subsystem and represents the actual working view of the project as a black-box interface description, without exposing the internal functional details of the individual blocks.
 
 ## RTL Design
 The design follows a top-down architecture, separated into three main functional blocks:
@@ -62,6 +63,4 @@ The design follows a top-down architecture, separated into three main functional
 2.  **Packet Controller (`pkt_ctrl.vhd`)**: Manages the communication protocol layer. Utilizes a Finite State Machine (FSM) to route incoming frames, track packet completeness, and manage the 1ms timeout timer.
 3.  **Arithmetic Unit (`arith_unit.vhd`)**: The core processing unit. Contains input registers to store frame data, combination logic for addition and multiplication (with floor rounding and saturation), and output registers for the results.
 
-<div align="center">
-  <img src="docs/images/rtl_design.png" alt="RTL Design Blocks" width="600">
-</div>
+![RTL Design](docs/images/rtl_design.png)
