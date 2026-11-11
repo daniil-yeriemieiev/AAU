@@ -63,7 +63,7 @@ signal bit_counter : integer range 0 to G_BITS;
 signal frame_active : std_logic;
 
 begin
- -- 1.  SCLK Synchronization
+-- 1.  SCLK Synchronization
 p_sclk_sync : process(clk)
 begin
     if rising_edge(clk) then
@@ -159,15 +159,12 @@ end process;
 p_frame_check : process(clk)
 begin
     if rising_edge(clk) then
+        fr_end <= '0' ;
+        fr_error <= '0';
+        fr_start <= '0';
         if rst = '1' then
             data_out <= (others => '0');
-            fr_end <= '0' ;
-            fr_error <= '0';
-            fr_start <= '0';
         else
-            fr_end <= '0' ;
-            fr_error <= '0'  ;
-            fr_start <= '0'  ;
             if cs_fe = '1' then 
                 fr_start<= '1';  
             end if;
